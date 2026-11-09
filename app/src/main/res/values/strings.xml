@@ -144,4 +144,7 @@
     <string name="section_language">LANGUAGE</string>
     <string name="section_account">ACCOUNT</string>
     <string name="preferences_desc">Tune Aurora to your rhythm.</string>
+
+    <string name="search_conversations">Search conversations</string>
+    <string name="no_search_results">No conversations match your search.</string>
 </resources>

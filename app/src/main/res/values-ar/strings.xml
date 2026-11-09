@@ -144,4 +144,7 @@
     <string name="section_language">اللغة</string>
     <string name="section_account">الحساب</string>
     <string name="preferences_desc">اضبط أورورا على إيقاعك.</string>
+
+    <string name="search_conversations">ابحث في المحادثات</string>
+    <string name="no_search_results">لا توجد محادثات مطابقة لبحثك.</string>
 </resources>

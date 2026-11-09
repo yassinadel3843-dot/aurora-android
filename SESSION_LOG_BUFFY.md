@@ -172,3 +172,34 @@ sleep 6   # لا تلتقط قبل ذلك: قد تظهر طبقة splash بيض�
   `local.properties` مستبعدان فعليًا (تم التحقق بـ `git check-ignore -v`).
 - **قاعدة العمل معه:** أي commit جديد لازم يكون محدّد النطاق، ومفيش `amend`
   على commit حد تاني، ومفيش push بدون طلب المستخدم.
+
+## 9) الركن المنسي: بحث المحادثات (2026-11-09 ~08:50)
+
+**المشكلة المكتشفة:** زرار البحث في `fragment_chat.xml` موجود من v1.0.0،
+و`ChatFragment` كان يرد عليه بـ `Toast(R.string.search)` فقط — واجهة كذابة
+بلا أي وظيفة، ولم تُذكر في `PROJECT_STATUS.md` ولا في أي بند.
+
+**التنفيذ:**
+1. `res/layout/fragment_chat.xml`: صف بحث `searchBar` مخفي في البداية
+   (أيقونة بحث + `EditText` + زر إغلاق)، بخلفية `@drawable/bg_input` الموجودة
+   (بلا أي مورد جديد سوى نصين).
+2. `ui/chat/ChatFragment.kt`: بحث حي أثناء الكتابة يطابق
+   **عنوان المحادثة + المعاينة + اسم العضو + نص كل رسالة** (ignoreCase)،
+   مع فتح/إغلاق الحقل ولوحة المفاتيح، و`IME_ACTION_SEARCH`.
+3. نصان جديدان في `values/strings.xml` و`values-ar/strings.xml`:
+   `search_conversations` و`no_search_results` (135 → 137 مفتاح في كل لغة).
+4. حذف `setOnLongClickListener { false }` الميت من `ConversationsAdapter`.
+
+**التحقق الفعلي (على المحاكي، بالعربية RTL):**
+
+| الحالة | النتيجة |
+|---|---|
+| القائمة قبل البحث | 4 محادثات |
+| كتابة `lina` | **2** محادثات (Design crew + Lina Farah) |
+| زر الإغلاق | رجعت **4** وتفريغ الحقل |
+| كتابة `zzz` | **0**، وظهر «لا توجد محادثات مطابقة لبحثك.» |
+| `FATAL EXCEPTION` | **0** |
+| البناء | BUILD SUCCESSFUL (18s) |
+
+**الدليل البصري:** `app/build/tmp/shots/chat_search_lina.png` و
+`chat_search_none.png` (لقطات 08:50).

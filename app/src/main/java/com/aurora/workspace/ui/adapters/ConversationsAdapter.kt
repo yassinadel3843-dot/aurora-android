@@ -57,7 +57,6 @@ class ConversationsAdapter(
         }
 
         b.root.setOnClickListener { onClick(conversation) }
-        b.root.setOnLongClickListener { false }
     }
 
     private fun initialsFor(title: String): String =
