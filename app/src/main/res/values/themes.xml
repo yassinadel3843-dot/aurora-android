@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base theme: shared behavior. Each visual theme overrides the aurora attrs. -->
+    <style name="Theme.Aurora" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/aurora_black</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="colorPrimary">@color/aurora_blue</item>
+        <item name="colorPrimaryVariant">#2F6FD0</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorSecondary">@color/aurora_indigo</item>
+        <item name="colorOnSecondary">#FFFFFF</item>
+        <item name="colorSurface">#0B1428</item>
+        <item name="colorOnSurface">#F2F6FF</item>
+        <item name="colorError">#FF6B81</item>
+        <item name="android:textColorPrimary">?attr/auroraText</item>
+        <item name="android:textColorSecondary">?attr/auroraTextDim</item>
+        <item name="android:fontFamily">@font/plexarabic_regular</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">false</item>
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+
+        <item name="auroraBg1">#04081A</item>
+        <item name="auroraBg2">#0A1A3F</item>
+        <item name="auroraGlow1">#1E5BFF</item>
+        <item name="auroraGlow2">#7C5CFF</item>
+        <item name="auroraSurface">#14E6F0FF</item>
+        <item name="auroraSurfaceStrong">#1FE6F0FF</item>
+        <item name="auroraStroke">#2EF0F8FF</item>
+        <item name="auroraText">#F2F6FF</item>
+        <item name="auroraTextDim">#8FA3C8</item>
+        <item name="auroraAccent">#4DA3FF</item>
+        <item name="auroraAccent2">#7C5CFF</item>
+        <item name="auroraDanger">#FF6B81</item>
+        <item name="auroraNav">#CC081226</item>
+        <item name="auroraIsLight">false</item>
+    </style>
+
+    <!-- 1. Night Sky: deep navy, electric blue -->
+    <style name="Theme.Aurora.NightSky" parent="Theme.Aurora">
+        <item name="android:windowBackground">#04081A</item>
+        <item name="auroraBg1">#04081A</item>
+        <item name="auroraBg2">#0A1A3F</item>
+        <item name="auroraGlow1">#1E5BFF</item>
+        <item name="auroraGlow2">#7C5CFF</item>
+        <item name="auroraAccent">#4DA3FF</item>
+        <item name="auroraAccent2">#7C5CFF</item>
+    </style>
+
+    <!-- 2. Glass Aurora: teal and violet, more translucent -->
+    <style name="Theme.Aurora.Glass" parent="Theme.Aurora">
+        <item name="android:windowBackground">#03100E</item>
+        <item name="auroraBg1">#03100E</item>
+        <item name="auroraBg2">#0A2422</item>
+        <item name="auroraGlow1">#0FD9B8</item>
+        <item name="auroraGlow2">#6E5BFF</item>
+        <item name="auroraSurface">#16E0FAF4</item>
+        <item name="auroraSurfaceStrong">#26E0FAF4</item>
+        <item name="auroraStroke">#36F0FDFA</item>
+        <item name="auroraText">#EAFBF7</item>
+        <item name="auroraTextDim">#7FA8A4</item>
+        <item name="auroraAccent">#2FE0C6</item>
+        <item name="auroraAccent2">#7C5CFF</item>
+        <item name="auroraDanger">#FF7A8E</item>
+        <item name="auroraNav">#CC061816</item>
+        <item name="colorSurface">#0A1A18</item>
+        <item name="colorOnSurface">#EAFBF7</item>
+    </style>
+
+    <!-- 3. Daylight: bright, clean, iOS-like -->
+    <style name="Theme.Aurora.Day" parent="Theme.Aurora">
+        <item name="android:windowBackground">#EDF2FA</item>
+        <item name="auroraBg1">#EDF2FA</item>
+        <item name="auroraBg2">#FFFFFF</item>
+        <item name="auroraGlow1">#9CC8FF</item>
+        <item name="auroraGlow2">#C9B8FF</item>
+        <item name="auroraSurface">#C8FFFFFF</item>
+        <item name="auroraSurfaceStrong">#F5FFFFFF</item>
+        <item name="auroraStroke">#2E1B2A45</item>
+        <item name="auroraText">#0B1220</item>
+        <item name="auroraTextDim">#5C6B85</item>
+        <item name="auroraAccent">#2F6FD0</item>
+        <item name="auroraAccent2">#7C5CFF</item>
+        <item name="auroraDanger">#D92D4B</item>
+        <item name="auroraNav">#E6FFFFFF</item>
+        <item name="auroraIsLight">true</item>
+        <item name="colorPrimary">#2F6FD0</item>
+        <item name="colorSurface">#FFFFFF</item>
+        <item name="colorOnSurface">#0B1220</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+    </style>
+
+    <!-- 4. Emerald: dark forest -->
+    <style name="Theme.Aurora.Emerald" parent="Theme.Aurora">
+        <item name="android:windowBackground">#03100A</item>
+        <item name="auroraBg1">#03100A</item>
+        <item name="auroraBg2">#08241A</item>
+        <item name="auroraGlow1">#0FB981</item>
+        <item name="auroraGlow2">#2FD0C0</item>
+        <item name="auroraSurface">#14E4F8EC</item>
+        <item name="auroraSurfaceStrong">#20E4F8EC</item>
+        <item name="auroraStroke">#2EF0F8EA</item>
+        <item name="auroraText">#ECFDF5</item>
+        <item name="auroraTextDim">#86B8A4</item>
+        <item name="auroraAccent">#35D67E</item>
+        <item name="auroraAccent2">#22D3EE</item>
+        <item name="auroraDanger">#FF7A8E</item>
+        <item name="auroraNav">#CC06160F</item>
+        <item name="colorSurface">#0A1A14</item>
+        <item name="colorOnSurface">#ECFDF5</item>
+    </style>
+
+    <!-- 5. Sunset: warm dusk -->
+    <style name="Theme.Aurora.Sunset" parent="Theme.Aurora">
+        <item name="android:windowBackground">#150610</item>
+        <item name="auroraBg1">#150610</item>
+        <item name="auroraBg2">#33101F</item>
+        <item name="auroraGlow1">#FF5E7E</item>
+        <item name="auroraGlow2">#FF9E5B</item>
+        <item name="auroraSurface">#14FFEDE6</item>
+        <item name="auroraSurfaceStrong">#20FFEDE6</item>
+        <item name="auroraStroke">#2EFFEEE8</item>
+        <item name="auroraText">#FFF3EF</item>
+        <item name="auroraTextDim">#C9A0A8</item>
+        <item name="auroraAccent">#FF8A5B</item>
+        <item name="auroraAccent2">#FF5E7E</item>
+        <item name="auroraDanger">#FF6B81</item>
+        <item name="auroraNav">#CC1C0913</item>
+        <item name="colorSurface">#1E0D17</item>
+        <item name="colorOnSurface">#FFF3EF</item>
+    </style>
+
+    <!-- Text appearances â€” IBM Plex Sans Arabic (bundled, Latin + Arabic). -->
+    <style name="Text.Aurora.Display" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/plexarabic_light</item>
+        <item name="android:textColor">?attr/auroraText</item>
+        <item name="android:textSize">38sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="Text.Aurora.H1" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/plexarabic_semibold</item>
+        <item name="android:textColor">?attr/auroraText</item>
+        <item name="android:textSize">27sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="Text.Aurora.H2" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/plexarabic_medium</item>
+        <item name="android:textColor">?attr/auroraText</item>
+        <item name="android:textSize">19sp</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="Text.Aurora.Title" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/plexarabic_medium</item>
+        <item name="android:textColor">?attr/auroraText</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Text.Aurora.Body" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/plexarabic_regular</item>
+        <item name="android:textColor">?attr/auroraTextDim</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">3dp</item>
+    </style>
+
+    <style name="Text.Aurora.Label" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/plexarabic_medium</item>
+        <item name="android:textColor">?attr/auroraTextDim</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:letterSpacing">0.08</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="Text.Aurora.Metric" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/plexarabic_medium</item>
+        <item name="android:textColor">?attr/auroraText</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="Widget.Aurora.Button" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:fontFamily">@font/plexarabic_medium</item>
+        <item name="android:minHeight">54dp</item>
+        <item name="cornerRadius">18dp</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+</resources>

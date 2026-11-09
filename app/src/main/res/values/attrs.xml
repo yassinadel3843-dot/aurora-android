@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="auroraBg1" format="color" />
+    <attr name="auroraBg2" format="color" />
+    <attr name="auroraGlow1" format="color" />
+    <attr name="auroraGlow2" format="color" />
+    <attr name="auroraSurface" format="color" />
+    <attr name="auroraSurfaceStrong" format="color" />
+    <attr name="auroraStroke" format="color" />
+    <attr name="auroraText" format="color" />
+    <attr name="auroraTextDim" format="color" />
+    <attr name="auroraAccent" format="color" />
+    <attr name="auroraAccent2" format="color" />
+    <attr name="auroraDanger" format="color" />
+    <attr name="auroraNav" format="color" />
+    <attr name="auroraIsLight" format="boolean" />
+
+    <declare-styleable name="GlassCard">
+        <attr name="glassCorner" format="dimension" />
+        <attr name="glassStrong" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="ProgressRingView">
+        <attr name="ringProgress" format="integer" />
+        <attr name="ringStroke" format="dimension" />
+        <attr name="ringAnimated" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="AvatarView">
+        <attr name="avatarName" format="string" />
+        <attr name="avatarColor" format="color" />
+        <attr name="avatarRing" format="boolean" />
+    </declare-styleable>
+</resources>

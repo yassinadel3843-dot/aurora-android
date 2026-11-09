@@ -1,0 +1,145 @@
+package com.aurora.workspace.ui.projects
+
+import android.content.DialogInterface
+import android.graphics.Color
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
+import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
+import com.aurora.workspace.R
+import com.aurora.workspace.data.Project
+import com.aurora.workspace.data.Store
+import com.aurora.workspace.databinding.DialogNewProjectBinding
+import com.aurora.workspace.databinding.FragmentProjectsBinding
+import com.aurora.workspace.ui.ProjectDetailActivity
+import com.aurora.workspace.ui.adapters.ProjectsAdapter
+import com.aurora.workspace.util.colorAttr
+import com.aurora.workspace.util.fitCenteredColumn
+import com.aurora.workspace.util.gridSpan
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+
+class ProjectsFragment : Fragment() {
+
+    private var _binding: FragmentProjectsBinding? = null
+    private val binding get() = _binding!!
+    private lateinit var adapter: ProjectsAdapter
+    private var filter = FILTER_ALL
+
+    companion object {
+        private const val FILTER_ALL = "all"
+        private const val FILTER_ACTIVE = "active"
+        private const val FILTER_DONE = "done"
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = FragmentProjectsBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Screen-size adaptation: centered content column + grid list on tablets.
+        view.fitCenteredColumn(720)
+
+        adapter = ProjectsAdapter { project ->
+            ProjectDetailActivity.start(requireContext(), project.id)
+        }
+        binding.projectsList.layoutManager = GridLayoutManager(requireContext(), binding.root.gridSpan())
+        binding.projectsList.adapter = adapter
+
+        binding.chipAll.setOnClickListener { setFilter(FILTER_ALL) }
+        binding.chipActive.setOnClickListener { setFilter(FILTER_ACTIVE) }
+        binding.chipDone.setOnClickListener { setFilter(FILTER_DONE) }
+        binding.addButton.setOnClickListener { showNewProjectDialog() }
+
+        setFilter(FILTER_ALL)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (_binding != null) bind()
+    }
+
+    private fun setFilter(value: String) {
+        filter = value
+        styleChip(binding.chipAll, value == FILTER_ALL)
+        styleChip(binding.chipActive, value == FILTER_ACTIVE)
+        styleChip(binding.chipDone, value == FILTER_DONE)
+        bind()
+    }
+
+    private fun styleChip(chip: TextView, selected: Boolean) {
+        chip.setBackgroundResource(
+            if (selected) R.drawable.bg_chip_selected else R.drawable.bg_chip_unselected
+        )
+        chip.setTextColor(
+            if (selected) Color.WHITE else requireContext().colorAttr(R.attr.auroraTextDim)
+        )
+    }
+
+    private fun bind() {
+        val list: List<Project> = when (filter) {
+            FILTER_ACTIVE -> Store.projects.filter { !it.isDone }
+            FILTER_DONE -> Store.projects.filter { it.isDone }
+            else -> Store.projects.toList()
+        }
+        adapter.submit(list)
+        binding.emptyView.visibility = if (list.isEmpty()) View.VISIBLE else View.GONE
+    }
+
+    private fun showNewProjectDialog() {
+        val dialogBinding = DialogNewProjectBinding.inflate(layoutInflater)
+        val dialog = MaterialAlertDialogBuilder(requireContext())
+            .setTitle(R.string.new_project)
+            .setView(dialogBinding.root)
+            .setPositiveButton(R.string.create, null)
+            .setNegativeButton(R.string.cancel, null)
+            .create()
+
+        dialog.setOnShowListener {
+            dialog.getButton(DialogInterface.BUTTON_POSITIVE).setOnClickListener {
+                val name = dialogBinding.nameInput.text.toString().trim()
+                if (name.isEmpty()) {
+                    dialogBinding.nameInput.error = getString(R.string.project_name_required)
+                    return@setOnClickListener
+                }
+                val description = dialogBinding.descriptionInput.text.toString().trim()
+                    .ifBlank { getString(R.string.project_desc_empty) }
+
+                val emojis = listOf("\uD83C\uDF0C", "\uD83C\uDFA8", "\uD83D\uDCF1", "\uD83D\uDE80", "\u2728", "\uD83E\uDDED", "\uD83C\uDF3F")
+                val accents = intArrayOf(
+                    0xFF4DA3FF.toInt(),
+                    0xFF7C5CFF.toInt(),
+                    0xFF35E0C8.toInt(),
+                    0xFFFF8A5B.toInt(),
+                    0xFF37D67A.toInt()
+                )
+
+                Store.addProject(
+                    requireContext(),
+                    name,
+                    description,
+                    emojis.random(),
+                    accents.random()
+                )
+                dialog.dismiss()
+                setFilter(FILTER_ALL)
+            }
+        }
+        dialog.show()
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+}

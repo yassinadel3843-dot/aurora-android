@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Aurora tab transition: the old screen releases upward while fading.
+     Shorter than the enter so the two never feel like a cross-fade blur. -->
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:interpolator="@android:interpolator/linear_out_slow_in">
+
+    <alpha
+        android:duration="150"
+        android:fromAlpha="1.0"
+        android:toAlpha="0.0" />
+
+    <translate
+        android:duration="170"
+        android:fromYDelta="0"
+        android:toYDelta="-1.5%p" />
+
+    <scale
+        android:duration="170"
+        android:fromXScale="1.0"
+        android:fromYScale="1.0"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:toXScale="0.99"
+        android:toYScale="0.99" />
+</set>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="aurora_blue">#4DA3FF</color>
+    <color name="aurora_indigo">#7C5CFF</color>
+    <color name="aurora_teal">#35E0C8</color>
+    <color name="aurora_white">#FFFFFF</color>
+    <color name="aurora_black">#05070F</color>
+    <color name="ic_launcher_bg">#050A18</color>
+</resources>

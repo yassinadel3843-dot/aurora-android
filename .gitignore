@@ -1,0 +1,15 @@
+*.iml
+.gradle/
+# Stray screenshots dropped at the repo root by test runs
+/Screenshot_*.png
+.kotlin/
+/local.properties
+/.idea/
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+app/build/
+build/
