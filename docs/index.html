@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aurora · أورورا — Download</title>
+<meta name="description" content="Aurora is a native Android workspace for projects, tasks and team conversations. Offline-first, English and Arabic, five themes.">
+<link rel="icon" href="screens/home.png">
+<style>
+  :root {
+    --bg1: #0b0f2b;
+    --bg2: #141a45;
+    --glass: rgba(255, 255, 255, .07);
+    --stroke: rgba(255, 255, 255, .14);
+    --text: #eef1ff;
+    --dim: #a9b0d6;
+    --accent: #6f8dff;
+    --accent2: #ff8a5c;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: "Inter", "Segoe UI", "Noto Naskh Arabic", system-ui, sans-serif;
+    color: var(--text);
+    background:
+      radial-gradient(900px 600px at 85% -10%, rgba(111, 141, 255, .35), transparent 60%),
+      radial-gradient(700px 500px at 5% 110%, rgba(255, 138, 92, .22), transparent 65%),
+      linear-gradient(160deg, var(--bg1), var(--bg2) 60%, #0a0d22);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+  .stars {
+    position: fixed; inset: 0; pointer-events: none; opacity: .55;
+    background-image:
+      radial-gradient(1.6px 1.6px at 20% 18%, #fff, transparent),
+      radial-gradient(1.4px 1.4px at 72% 12%, #fff, transparent),
+      radial-gradient(1.2px 1.2px at 44% 38%, #cfe0ff, transparent),
+      radial-gradient(1.5px 1.5px at 88% 46%, #fff, transparent),
+      radial-gradient(1.2px 1.2px at 12% 62%, #dfe7ff, transparent),
+      radial-gradient(1.4px 1.4px at 62% 74%, #fff, transparent),
+      radial-gradient(1.1px 1.1px at 34% 86%, #fff, transparent);
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 22px 80px; position: relative; }
+  header {
+    display: flex; align-items: center; gap: 14px;
+    padding: 24px 0 8px;
+    flex-wrap: wrap;
+  }
+  .logo {
+    width: 44px; height: 44px; border-radius: 14px;
+    background: linear-gradient(140deg, #4f7cff, #9a6bff 55%, #ff8a5c);
+    display: grid; place-items: center;
+    font-weight: 800; font-size: 20px; color: #fff;
+    box-shadow: 0 10px 30px rgba(79, 124, 255, .45);
+  }
+  .brand { font-weight: 700; font-size: 20px; letter-spacing: .2px; }
+  .brand small { display: block; font-weight: 400; font-size: 12px; color: var(--dim); }
+  .spacer { flex: 1; }
+  .langs { display: flex; gap: 6px; }
+  .langs button {
+    background: var(--glass); color: var(--dim); border: 1px solid var(--stroke);
+    padding: 8px 14px; border-radius: 999px; font: inherit; font-size: 13px; cursor: pointer;
+  }
+  .langs button[aria-pressed="true"] { color: #fff; background: rgba(111, 141, 255, .28); border-color: rgba(111, 141, 255, .6); }
+
+  .hero { padding: 54px 0 30px; max-width: 720px; }
+  .pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 12px; color: var(--dim);
+    background: var(--glass); border: 1px solid var(--stroke);
+    padding: 7px 13px; border-radius: 999px;
+  }
+  .dot { width: 7px; height: 7px; border-radius: 50%; background: #57d68b; box-shadow: 0 0 10px #57d68b; }
+  h1 { font-size: clamp(34px, 6vw, 58px); line-height: 1.06; margin: 18px 0 14px; letter-spacing: -1px; }
+  h1 span { background: linear-gradient(100deg, #9fc0ff, #ffb08f); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .lead { font-size: clamp(16px, 2.2vw, 19px); color: var(--dim); line-height: 1.65; margin: 0 0 26px; }
+  .cta { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 15px 26px; border-radius: 16px; font-weight: 600; text-decoration: none;
+    font-size: 15px; transition: transform .18s ease, box-shadow .18s ease;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-primary {
+    color: #0a0f2b;
+    background: linear-gradient(120deg, #bcd0ff, #ffd0bb);
+    box-shadow: 0 16px 40px rgba(140, 170, 255, .35);
+  }
+  .btn-ghost { color: var(--text); background: var(--glass); border: 1px solid var(--stroke); }
+  .meta { margin-top: 18px; font-size: 13px; color: var(--dim); display: flex; gap: 18px; flex-wrap: wrap; }
+
+  section { margin-top: 64px; }
+  h2 { font-size: 24px; margin: 0 0 10px; letter-spacing: -.3px; }
+  .sub { color: var(--dim); margin: 0 0 22px; font-size: 14.5px; line-height: 1.65; }
+
+  .shots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .shots img {
+    width: 100%; border-radius: 22px; border: 1px solid var(--stroke);
+    box-shadow: 0 22px 50px rgba(0, 0, 0, .45); display: block;
+  }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; }
+  .card {
+    background: linear-gradient(160deg, rgba(255,255,255,.09), rgba(255,255,255,.035));
+    border: 1px solid var(--stroke); border-radius: 20px; padding: 20px;
+  }
+  .card h3 { margin: 10px 0 8px; font-size: 16px; }
+  .card p { margin: 0; color: var(--dim); font-size: 14px; line-height: 1.6; }
+  .ico { font-size: 20px; }
+
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; counter-reset: s; }
+  .step { position: relative; padding-inline-start: 54px; }
+  .step::before {
+    counter-increment: s; content: counter(s);
+    position: absolute; inset-inline-start: 0; top: 0;
+    width: 36px; height: 36px; border-radius: 12px; display: grid; place-items: center;
+    background: rgba(111, 141, 255, .22); border: 1px solid rgba(111, 141, 255, .5);
+    font-weight: 700; font-size: 14px;
+  }
+  .honest { border-color: rgba(255, 138, 92, .45); background: linear-gradient(160deg, rgba(255,138,92,.14), rgba(255,138,92,.05)); }
+  .honest ul { margin: 0; padding-inline-start: 20px; color: var(--dim); font-size: 14px; line-height: 1.75; }
+
+  footer {
+    margin-top: 70px; padding-top: 22px; border-top: 1px solid var(--stroke);
+    display: flex; gap: 16px; flex-wrap: wrap; align-items: center;
+    color: var(--dim); font-size: 13px;
+  }
+  footer a { color: var(--dim); }
+  [dir="rtl"] body, [dir="rtl"] { font-family: "Noto Naskh Arabic", "Segoe UI", system-ui, sans-serif; }
+  @media (max-width: 720px) {
+    .shots { grid-template-columns: repeat(2, 1fr); }
+    .hero { padding-top: 34px; }
+  }
+</style>
+</head>
+<body>
+<div class="stars"></div>
+<div class="wrap">
+
+  <header>
+    <div class="logo">A</div>
+    <div class="brand">Aurora <small data-en="Android workspace" data-ar="مساحة عمل أندرويد">Android workspace</small></div>
+    <div class="spacer"></div>
+    <div class="langs" role="group" aria-label="Language">
+      <button id="btn-en" aria-pressed="true">English</button>
+      <button id="btn-ar" aria-pressed="false">العربية</button>
+    </div>
+  </header>
+
+  <div class="hero">
+    <span class="pill"><span class="dot"></span><span data-en="Version 1.0.0 · free" data-ar="الإصدار 1.0.0 · مجانًا">Version 1.0.0 · free</span></span>
+    <h1>
+      <span data-en="A calm place for your projects" data-ar="مكان هادئ لمشاريعك">A calm place for your projects</span>
+    </h1>
+    <p class="lead" data-en="Aurora is a native Android app for projects, tasks and team conversations. It works fully offline, speaks English and Arabic, and comes with five hand-tuned themes on glass surfaces."
+       data-ar="أورورا تطبيق أندرويد أصلي للمشاريع والمهام ومحادثات الفريق. يعمل بلا إنترنت تمامًا، ويتحدث العربية والإنجليزية، ويأتي بخمسة ثيمات مصمّمة يدويًا على أسطح زجاجية.">
+      Aurora is a native Android app for projects, tasks and team conversations. It works fully offline, speaks English and Arabic, and comes with five hand-tuned themes on glass surfaces.
+    </p>
+    <div class="cta">
+      <a class="btn btn-primary" href="https://github.com/yassinadel3843-dot/Aurora/releases/latest">
+        <span data-en="⬇ Download the APK" data-ar="⬇ نزّل ملف APK">⬇ Download the APK</span>
+      </a>
+      <a class="btn btn-ghost" href="https://github.com/yassinadel3843-dot/Aurora">
+        <span data-en="View on GitHub" data-ar="عرض على GitHub">View on GitHub</span>
+      </a>
+    </div>
+    <div class="meta">
+      <span data-en="Android 5.0+" data-ar="أندرويد 5.0+">Android 5.0+</span>
+      <span data-en="≈ 5 MB" data-ar="≈ 5 ميجابايت">≈ 5 MB</span>
+      <span data-en="No account needed" data-ar="بلا حاجة لحساب">No account needed</span>
+      <span data-en="Updates itself" data-ar="يحدّث نفسه">Updates itself</span>
+    </div>
+  </div>
+
+  <section>
+    <div class="shots">
+      <img src="screens/home.png" alt="Aurora home screen">
+      <img src="screens/projects.png" alt="Aurora projects list">
+      <img src="screens/detail.png" alt="Aurora project detail">
+      <img src="screens/profile.png" alt="Aurora profile and themes">
+    </div>
+  </section>
+
+  <section>
+    <h2 data-en="What it does" data-ar="ما يفعله">What it does</h2>
+    <p class="sub" data-en="Everything below is in the app today — nothing here is a promise for later."
+       data-ar="كل ما بالأسفل موجود في التطبيق اليوم — لا شيء هنا وعد مؤجّل.">Everything below is in the app today — nothing here is a promise for later.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="ico">🗂️</div>
+        <h3 data-en="Projects with a personality" data-ar="مشاريع بشخصية">Projects with a personality</h3>
+        <p data-en="Pick an icon and a colour when you create a project. Add tasks with due dates, priorities and tags, tick them off, and the progress bar and percentage follow along."
+           data-ar="اختر أيقونة ولونًا عند إنشاء المشروع. أضف مهامًا بتاريخ استحقاق وأولوية ووسم، علّمها كمنجزة، فيتبعها شريط التقدّم والنسبة فورًا.">Pick an icon and a colour when you create a project…</p>
+      </div>
+      <div class="card">
+        <div class="ico">🔍</div>
+        <h3 data-en="Search that actually filters" data-ar="بحث يفلتر فعلًا">Search that actually filters</h3>
+        <p data-en="The chat list filters as you type — titles, message previews, member names and the message texts themselves."
+           data-ar="قائمة المحادثات تُفلتر أثناء الكتابة — العناوين ومعاينات الرسائل وأسماء الأعضاء ونصوص الرسائل نفسها.">The chat list filters as you type…</p>
+      </div>
+      <div class="card">
+        <div class="ico">💬</div>
+        <h3 data-en="Conversations, individual and group" data-ar="محادثات فردية وجماعية">Conversations, individual and group</h3>
+        <p data-en="Threads with history, unread counts and a full chat screen. Messages are stored on the device."
+           data-ar="محادثات بسجل وعدّاد غير مقروء وشاشة دردشة كاملة. الرسائل محفوظة على الجهاز.">Threads with history…</p>
+      </div>
+      <div class="card">
+        <div class="ico">🎨</div>
+        <h3 data-en="Five themes, instant" data-ar="خمسة ثيمات فورًا">Five themes, instant</h3>
+        <p data-en="Night Sky, Glass Aurora, Daylight, Emerald and Sunset. Glass cards, a canvas-drawn starfield and a progress ring — all made for this app."
+           data-ar="Night Sky وGlass Aurora وDaylight وEmerald وSunset. بطاقات زجاجية وخلفية نجوم مرسومة وحلقة تقدّم — كلها مصنوعة لهذا التطبيق.">Night Sky, Glass Aurora, Daylight…</p>
+      </div>
+      <div class="card">
+        <div class="ico">🌍</div>
+        <h3 data-en="English + Arabic, real RTL" data-ar="عربي + إنجليزي، RTL حقيقي">English + Arabic, real RTL</h3>
+        <p data-en="Switch language inside the app; layouts flip fully to right-to-left and dates localise."
+           data-ar="بدّل اللغة داخل التطبيق؛ تنعكس الواجهات بالكامل إلى اليمين-لليسار وتتوطّن التواريخ.">Switch language inside the app…</p>
+      </div>
+      <div class="card">
+        <div class="ico">📱</div>
+        <h3 data-en="Phones and tablets" data-ar="هواتف وأجهزة لوحية">Phones and tablets</h3>
+        <p data-en="Edge-to-edge on phones; from 600dp the content becomes a centred column and project lists a two-column grid."
+           data-ar="حافة إلى حافة على الهواتف؛ ومن 600dp يصبح المحتوى عمودًا مركزيًا وقوائم المشاريع شبكة عمودين.">Edge-to-edge on phones…</p>
+      </div>
+      <div class="card">
+        <div class="ico">🔒</div>
+        <h3 data-en="Offline by design" data-ar="أوفلاين بالتصميم">Offline by design</h3>
+        <p data-en="No server, no account, no analytics. Your projects and messages live in local storage on your device."
+           data-ar="بلا سيرفر وبلا حساب وبلا تحليلات. مشاريعك ورسائلك في تخزين محلي على جهازك.">No server, no account, no analytics…</p>
+      </div>
+      <div class="card">
+        <div class="ico">🔄</div>
+        <h3 data-en="One-tap updates" data-ar="تحديث بنقرة">One-tap updates</h3>
+        <p data-en="A daily check finds new versions and notifies you; the app downloads the APK and opens Android's installer for you."
+           data-ar="فحص يومي يجد الإصدارات الجديدة ويشعرك؛ والتطبيق ينزّل APK ويفتح مثبّت أندرويد نيابة عنك.">A daily check finds new versions…</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-en="How the update works" data-ar="كيف يعمل التحديث">How the update works</h2>
+    <p class="sub" data-en="Aurora asks GitHub for the latest release at most once a day. Tapping the notification or Profile → About Aurora → Check for updates does the same thing on demand."
+       data-ar="يسأل أورورا GitHub عن أحدث إصدار مرة واحدة يوميًا كحد أقصى. والضغط على الإشعار أو حسابي ← عن أورورا ← التحقق من التحديثات يفعل الشيء نفسه عند الطلب.">Aurora asks GitHub for the latest release at most once a day…</p>
+    <div class="card honest">
+      <h3 data-en="The honest part" data-ar="الجزء الصريح">The honest part</h3>
+      <ul>
+        <li data-en="Android never installs an APK silently. Aurora downloads it and opens the system installer — you tap Install once."
+            data-ar="أندرويد لا يثبّت APK بصمت أبدًا. أورورا ينزّله ويفتح مثبّت النظام — وتضغط «تثبيت» مرة واحدة.">Android never installs an APK silently…</li>
+        <li data-en="On Android 8 and newer you allow “install unknown apps” for Aurora one time."
+            data-ar="على أندرويد 8 وأحدث تسمح لأورورا بـ«تثبيت تطبيقات غير معروفة» مرة واحدة.">On Android 8+ you allow “install unknown apps”…</li>
+        <li data-en="Updates replace the app and keep your local data, because every release is signed with the same key."
+            data-ar="التحديث يستبدل التطبيق ويحفظ بياناتك المحلية، لأن كل إصدار موقّع بالمفتاح نفسه.">Updates replace the app and keep your data…</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-en="Install in three steps" data-ar="التثبيت في ثلاث خطوات">Install in three steps</h2>
+    <div class="steps">
+      <div class="step">
+        <h3 data-en="Download" data-ar="التنزيل">Download</h3>
+        <p class="sub" data-en="Tap Download above and save the APK." data-ar="اضغط «نزّل» بالأعلى واحفظ ملف APK.">Tap Download above…</p>
+      </div>
+      <div class="step">
+        <h3 data-en="Allow this source" data-ar="اسمح بهذا المصدر">Allow this source</h3>
+        <p class="sub" data-en="Android asks once whether to allow installs from your browser or file manager."
+           data-ar="يسألك أندرويد مرة واحدة هل تسمح بالتثبيت من المتصفح أو مدير الملفات.">Android asks once…</p>
+      </div>
+      <div class="step">
+        <h3 data-en="Open Aurora" data-ar="افتح أورورا">Open Aurora</h3>
+        <p class="sub" data-en="Use the demo account to look around, or enter your name and email. Nothing is uploaded."
+           data-ar="استخدم الحساب التجريبي للتجربة، أو أدخل اسمك وبريدك. لا شيء يُرفع.">Use the demo account…</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-en="What it does not do" data-ar="ما لا يفعله">What it does not do</h2>
+    <p class="sub" data-en="No cloud sync, no real-time delivery of messages to other phones, no OAuth sign-in, no web/desktop/iOS build, and it is not on Google Play. Linking Google uses the account already on your device and grants no cloud access. The streak on Home is seeded demo data."
+       data-ar="لا مزامنة سحابية، ولا تسليم لحظي للرسائل لهواتف أخرى، ولا تسجيل OAuth، ولا نسخة ويب/سطح مكتب/iOS، وليس على Google Play. ربط Google يستخدم الحساب الموجود على جهازك ولا يمنح وصولًا سحابيًا. وسلسلة الأيام في الرئيسية بيانات تجريبية.">No cloud sync, no real-time delivery…</p>
+  </section>
+
+  <footer>
+    <span>© 2026 Aurora</span>
+    <span>·</span>
+    <a href="https://github.com/yassinadel3843-dot/Aurora/blob/main/PRIVACY.md" data-en="Privacy" data-ar="الخصوصية">Privacy</a>
+    <span>·</span>
+    <a href="https://github.com/yassinadel3843-dot/Aurora/blob/main/CHANGELOG.md" data-en="Changelog" data-ar="سجل التغييرات">Changelog</a>
+    <span>·</span>
+    <a href="https://github.com/yassinadel3843-dot/Aurora">GitHub</a>
+    <div class="spacer"></div>
+    <span data-en="All rights reserved." data-ar="جميع الحقوق محفوظة.">All rights reserved.</span>
+  </footer>
+</div>
+
+<script>
+  const html = document.documentElement;
+  const btnEn = document.getElementById('btn-en');
+  const btnAr = document.getElementById('btn-ar');
+
+  function apply(lang) {
+    const ar = lang === 'ar';
+    html.lang = ar ? 'ar' : 'en';
+    html.dir = ar ? 'rtl' : 'ltr';
+    document.title = ar ? 'أورورا — التنزيل' : 'Aurora — Download';
+    document.querySelectorAll('[data-en]').forEach(el => {
+      const value = el.getAttribute(ar ? 'data-ar' : 'data-en');
+      if (value) el.textContent = value;
+    });
+    btnEn.setAttribute('aria-pressed', String(!ar));
+    btnAr.setAttribute('aria-pressed', String(ar));
+    try { localStorage.setItem('aurora.lang', lang); } catch (e) {}
+  }
+
+  btnEn.addEventListener('click', () => apply('en'));
+  btnAr.addEventListener('click', () => apply('ar'));
+
+  let saved = null;
+  try { saved = localStorage.getItem('aurora.lang'); } catch (e) {}
+  apply(saved === 'ar' ? 'ar' : 'en');
+</script>
+</body>
+</html>

@@ -27,6 +27,7 @@ import com.aurora.workspace.ui.AuroraActivity
 import com.aurora.workspace.ui.AuthActivity
 import com.aurora.workspace.util.GoogleAccountHelper
 import com.aurora.workspace.util.NotificationHelper
+import com.aurora.workspace.util.UpdateChecker
 import com.aurora.workspace.util.colorAttr
 import com.aurora.workspace.util.dp
 import com.aurora.workspace.util.fitCenteredColumn
@@ -139,7 +140,10 @@ class ProfileFragment : Fragment() {
         b.hapticsSwitch.setOnCheckedChangeListener(null)
         b.hapticsSwitch.isChecked = Store.haptics
         b.hapticsSwitch.setOnCheckedChangeListener(hapticsListener)
-        b.version.text = getString(R.string.version, "1.0.0")
+        b.version.text = getString(
+            R.string.version,
+            UpdateChecker.installedVersion(requireContext())
+        )
 
         bindGoogle()
         bindLanguage()
@@ -293,10 +297,18 @@ class ProfileFragment : Fragment() {
     }
 
     private fun showAbout() {
-        MaterialAlertDialogBuilder(requireContext())
+        val context = requireContext()
+        // The About sheet is also the manual entry point for updates, so the
+        // version shown here is read from the installed package (never a
+        // hardcoded string that could drift from the built APK).
+        val version = getString(R.string.version, UpdateChecker.installedVersion(context))
+        MaterialAlertDialogBuilder(context)
             .setTitle(R.string.about)
-            .setMessage(R.string.about_text)
-            .setPositiveButton(R.string.ok, null)
+            .setMessage(getString(R.string.about_text) + "\n\n" + version)
+            .setPositiveButton(R.string.updates_check) { _, _ ->
+                UpdateChecker.check(requireActivity(), manual = true)
+            }
+            .setNegativeButton(R.string.updates_close, null)
             .show()
     }
 

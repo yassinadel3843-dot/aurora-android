@@ -224,3 +224,33 @@
 - لقطات EN الخاصة بتاب Profile أُعيد التقاطها (إحداثية التاب في LTR على اليمين).
 - التحقق: الهاتف الصغير والتابلت والإنجليزي LTR كلهم سليمون.
 - **متبقٍّ:** دمج `PROJECT_STATUS.md` + `NEXT_STEPS.md` (آخر وكيل ينتهي).
+
+## 11) تحديث 10:25 — طبقة النشر والتحديث الذاتي (Buffy)
+
+**ملكية جديدة (لا تُلمس بلا تنسيق):**
+
+- `.github/workflows/` · `docs/` (صفحة التنزيل واللقطات) · `PRIVACY.md` ·
+  `CHANGELOG.md` · `keystore/` (خارج Git) · `app/src/main/java/.../util/Update*.kt`
+  و`UpdateCheckerTest.kt` · كتلة `signingConfigs` في `app/build.gradle.kts` ·
+  `<provider>` والمستقبِلان في `AndroidManifest.xml`.
+
+**ملفات مشتركة تغيّرت — انتبه قبل التعديل:**
+
+| الملف | ما أُضيف |
+|---|---|
+| `app/build.gradle.kts` | `import java.util.Properties` + قراءة التوقيع من `keystore.properties`/`AURORA_*`؛ `testImplementation` لـ `org.json` |
+| `AndroidManifest.xml` | `REQUEST_INSTALL_PACKAGES` + FileProvider + `UpdateDownloadReceiver`/`UpdateInstallReceiver` |
+| `strings.xml` + `values-ar` | 19 مفتاح `updates_*` في كل لغة (العدد متساوٍ: 157) |
+| `ProfileFragment` | نص الإصدار من `PackageManager` وحوار «عن أورورا» فيه زر التحقق |
+| `MainActivity` | فحص تحديث صامت مرة/24h بعد `select(tab)` |
+| `AuroraApp` | إنشاء قناة `aurora_updates_channel` عند الإقلاع |
+| `NotificationHelper` | قناتان + إشعاران (متاح / جاهز للتثبيت) |
+
+**ملاحظات:**
+
+- التطبيق الآن **يتصل بالشبكة** يوميًا كحد أقصى للتحقق من الإصدار (تعديل مسجّل
+  في `DECISIONS.md` §6.3). أي ميزة أوفلاين أخرى ما زالت بلا شبكة.
+- لا تعِد بناء منطق المقارنة أو التنزيل؛ اختُبر (17 اختبارًا + توقيع APK حقيقي).
+- **مطلوب من صاحب المشروع:** إنشاء المستودع/الدفع من GitHub Desktop، إضافة
+  أسرار التوقيع الأربعة، تفعيل Pages من `docs/`، وقرار الترخيص.
+- بيانات الإيمولايتور ما زالت فيها «Picker Test» مرتين؛ لم تُمسح.

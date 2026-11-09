@@ -149,4 +149,24 @@
     <string name="project_accent">اللون</string>
     <string name="search_conversations">ابحث في المحادثات</string>
     <string name="no_search_results">لا توجد محادثات مطابقة لبحثك.</string>
+
+    <!-- التحديث الذاتي (إصدارات GitHub) -->
+    <string name="updates_check">التحقق من التحديثات</string>
+    <string name="updates_checking">جارٍ التحقق من التحديثات…</string>
+    <string name="updates_title">أورورا %1$s متاح</string>
+    <string name="updates_notif_body">اضغط لفتح صفحة الإصدار ومعرفة الجديد.</string>
+    <string name="updates_latest">أنت على أحدث إصدار.</string>
+    <string name="updates_failed">تعذّر التحقق من التحديثات. تحقق من اتصالك وحاول مجددًا.</string>
+    <string name="updates_no_notes">لا توجد ملاحظات إصدار.</string>
+    <string name="updates_download">تنزيل وتثبيت</string>
+    <string name="updates_later">لاحقًا</string>
+    <string name="updates_downloading">جارٍ تنزيل أورورا %1$s…</string>
+    <string name="updates_downloading_toast">جارٍ تنزيل التحديث…</string>
+    <string name="updates_ready_title">التحديث جاهز للتثبيت</string>
+    <string name="updates_ready_body">اضغط لإكمال تثبيت أورورا.</string>
+    <string name="updates_permission">اسمح لأورورا بتثبيت التطبيقات غير المعروفة، ثم اضغط الإشعار مرة أخرى.</string>
+    <string name="updates_file_missing">ملف التحديث لم يعد موجودًا. نزّله من جديد.</string>
+    <string name="updates_channel_name">تحديثات أورورا</string>
+    <string name="updates_channel_desc">الإصدارات الجديدة من أورورا، مرة واحدة يوميًا كحد أقصى</string>
+    <string name="updates_close">إغلاق</string>
 </resources>

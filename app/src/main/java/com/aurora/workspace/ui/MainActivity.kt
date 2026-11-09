@@ -14,6 +14,7 @@ import com.aurora.workspace.ui.chat.ChatFragment
 import com.aurora.workspace.ui.home.HomeFragment
 import com.aurora.workspace.ui.profile.ProfileFragment
 import com.aurora.workspace.ui.projects.ProjectsFragment
+import com.aurora.workspace.util.UpdateChecker
 import com.aurora.workspace.util.colorAttr
 import com.aurora.workspace.util.fitCenteredColumn
 
@@ -56,6 +57,10 @@ class MainActivity : AuroraActivity() {
         val restored = savedInstanceState?.getString(KEY_TAB)
         if (restored != null) tab = restored
         select(tab, animate = false)
+
+        // Fire-and-forget: at most one request a day, and it never blocks the
+        // screen. A newer release becomes a notification instead of a dialog.
+        UpdateChecker.check(this, manual = false)
 
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {

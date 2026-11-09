@@ -16,3 +16,13 @@ build/
 
 # Freebuff desktop markers (machine-local, never commit)
 .freebuff/
+
+# Release signing material — must never be committed
+/keystore/
+keystore.properties
+*.jks
+*.keystore
+*.b64
+
+# Local agent scratch space
+app/build/tmp/

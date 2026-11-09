@@ -149,4 +149,24 @@
     <string name="project_accent">Color</string>
     <string name="search_conversations">Search conversations</string>
     <string name="no_search_results">No conversations match your search.</string>
+
+    <!-- Self-update (GitHub releases) -->
+    <string name="updates_check">Check for updates</string>
+    <string name="updates_checking">Checking for updates…</string>
+    <string name="updates_title">Aurora %1$s is available</string>
+    <string name="updates_notif_body">Tap to open the release page and see what\'s new.</string>
+    <string name="updates_latest">You\'re on the latest version.</string>
+    <string name="updates_failed">Couldn\'t check for updates. Check your connection and try again.</string>
+    <string name="updates_no_notes">No release notes were provided.</string>
+    <string name="updates_download">Download &amp; install</string>
+    <string name="updates_later">Later</string>
+    <string name="updates_downloading">Downloading Aurora %1$s…</string>
+    <string name="updates_downloading_toast">Downloading the update…</string>
+    <string name="updates_ready_title">Update ready to install</string>
+    <string name="updates_ready_body">Tap to finish installing Aurora.</string>
+    <string name="updates_permission">Allow Aurora to install unknown apps, then tap the notification again.</string>
+    <string name="updates_file_missing">The downloaded file is gone. Please download the update again.</string>
+    <string name="updates_channel_name">Aurora updates</string>
+    <string name="updates_channel_desc">New versions of Aurora, once a day at most</string>
+    <string name="updates_close">Close</string>
 </resources>

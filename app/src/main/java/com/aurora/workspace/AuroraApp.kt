@@ -18,5 +18,7 @@ class AuroraApp : Application() {
         // Register the notifications channel up front so the first reminder can
         // be posted without waiting for the user to open preferences.
         NotificationHelper.createChannel(this)
+        // Update notices live on their own channel (mutable independently).
+        NotificationHelper.createUpdateChannel(this)
     }
 }
