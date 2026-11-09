@@ -5,15 +5,20 @@ All notable changes to Aurora. Versions follow `versionName` in
 
 ## [Unreleased]
 
-من v1.0.0 مفيش أي تغيير وظيفي — كل اللي اتعمل بعدها توثيق فقط. أي إضافة جديدة
-تُسجَّل هنا قبل رفع الإصدار القادم.
+(فاضي — أي إضافة جديدة تُسجَّل هنا قبل الإصدار القادم.)
 
-**الرقم القادم: 1.0.1** لإصلاحات، أو **1.1.0** لو فيه ميزات جديدة.
+## [1.0.1] — 2026-11-09
 
-No functional changes since v1.0.0 — only documentation. Anything new gets
-recorded here before the next release is cut.
+### Changed
 
-**Next version: 1.0.1** for fixes, or **1.1.0** if new features land.
+- **توقيع إصدار رسمي.** لم يعد الـ release يُبنى بشهادة debug العامة — ده أول
+  إصدار موقّع بمفتاح خاص، وموجود في `keystore.properties` (محلي ومستثنى من git).
+- `versionCode` من 1 إلى 2 و`versionName` من 1.0.0 إلى 1.0.1.
+
+### Notes
+
+- أي مستخدم ثبّت **v1.0.0 (debug)** لازم يلغي تثبيته الأول قبل تثبيت 1.0.1، لأن
+  أندرويد يرفض التحديث بتوقيع مختلف.
 
 ## [1.0.0] — 2026-11-09
 
