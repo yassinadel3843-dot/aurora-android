@@ -110,6 +110,11 @@
 - المستودع: `Aurora/` — فرع واحد `main`. أول Commit:
   `5a150b9 Baseline: Aurora v1.0.0 with full identity polish` (2026-11-09 08:32)،
   ويشمل بالفعل: M1 + M2 + M3 + M4 + **M5** + **M6** + `SESSION_LOG_BUFFY.md`.
+- **GitHub (أُضيف 2026-11-09):** `https://github.com/yassinadel3843-dot/aurora-android`
+  — **خاص**، والـ remote `origin` مضبوط عليه. أداة `gh` محمولة في
+  `.tools/gh/bin/gh.exe` (غير مثبّتة في النظام). أي وكيل: `git push` بعد كل commit.
+- **تنبيه دائم:** قبل `git add` تأكد إن كل ملف في القايمة ملكك — `git add -A` يسحب
+  شغل الوكيل التاني اللي ممكن يكون ناقص. استخدم `git add <الملفات>` بالاسم.
 - **قبل أي شغل:** `git status` لازم يكون نظيف. لو فيه تعديل غير مسجّل، سجّله
   أولًا باسم صاحبه (عشان ما يختلطش شغل الاتنين في commit واحد).
 - **بعد كل بند:** commit صغير ومحدد. صيغة الرسالة:
