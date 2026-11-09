@@ -6,13 +6,15 @@
 
 ## 1. الحالة الإجمالية
 
-- **الكود:** مشروع Android Studio كامل بنسخة ممتازة وصقيلة (versionName 1.0.0).
+- **الكود:** مشروع Android Studio كامل بنسخة ممتازة وصقيلة (versionName 1.0.1).
 - **Git:** مستودع داخل `Aurora/` منشور على GitHub (**عام**):
   `https://github.com/yassinadel3843-dot/aurora-android` — الفرع `main`.
   `.gitignore` يستثني `build/` و`.gradle/` و`.idea/` و`.kotlin/` و`local.properties`.
-- **الإصدار:** `v1.0.0` منشور على GitHub Releases مع APK موقّع (5.2 ميجا):
-  `…/releases/download/v1.0.0/aurora-1.0.0.apk`
-  (موقّع حاليًا بشهادة **debug** — لازم keystore خاص للنشر طويل الأمد).
+- **الإصدار:** `v1.0.1` (versionCode 2) منشور على GitHub Releases مع APK موقّع
+  بمفتاح الإصدار الرسمي: `…/releases/download/v1.0.1/aurora-1.0.1.apk`
+- **مفتاح التوقيع الموحد:** `.tools/aurora-release.keystore` (alias `aurora`) —
+  الإعدادات في `keystore.properties` (محلي ومستثنى من git)، والأسرار في GitHub
+  Actions باسم `AURORA_*`. **كل إصدار لاحق لازم يستخدم نفس المفتاح.**
 - **البناء:** ✅ أحدث بناء ناجح `gradle :app:assembleDebug :app:assembleRelease` بـ 0 أخطاء.
 - **APK:** ✅ مبني ويعمل بنسختي Debug و Release الموقّعة.
 - **الاختبارات الآلية:** ✅ توجد اختبارات وحدة مجتازة بنجاح `gradle :app:testDebugUnitTest` (2 passed, 0 failed).
@@ -72,8 +74,7 @@
 
 ## 4. لم يبدأ تنفيذه
 
-- أي بناء release موقّع بمفتاح خاص (إعداد `release` يوقّع حاليًا بـ **debug
-  keystore** تلقائيًا — مناسب للتجربة وليس للنشر).
+- أي بناء release موقّع بمفتاح الإصدار الموحد (راجع §1 — كان debug في 1.0.0).
 - أي اختبارات `androidTest`/UI أو CI (توجد 8 اختبارات وحدة فقط في
   `app/src/test`).
 - أي ميزات لم تطلبها به صريحًا منك ولا تؤيدها محادثة، فلا توجد خطة له.

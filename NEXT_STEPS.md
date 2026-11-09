@@ -7,10 +7,10 @@
 
 **Git:** المستودع منشور على GitHub (**عام**):
 `https://github.com/yassinadel3843-dot/aurora-android` — الفرع `main`.
-و**إصدار `v1.0.0` متاح للتحميل** مع APK موقّع:
-`…/releases/download/v1.0.0/aurora-1.0.0.apk`
-(موقّع بشهادة debug حاليًا). أي وكيل جديد يبدأ بـ `git status` ويتأكد إنه على آخر
-commit.
+و**إصدار `v1.0.1` متاح للتحميل** مع APK موقّع بمفتاح الإصدار الرسمي:
+`…/releases/download/v1.0.1/aurora-1.0.1.apk`
+المفتاح في `.tools/aurora-release.keystore` وموثّق في `keystore.properties`.
+أي وكيل جديد يبدأ بـ `git status` ويتأكد إنه على آخر commit.
 
 **منجز في الجولة الثانية:**
 - **M3** ظل الزجاج للـ `GlassCard` (outline دائري + elevation) — مُختبَر بصريًا.
