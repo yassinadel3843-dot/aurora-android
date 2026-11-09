@@ -208,7 +208,7 @@ class ProjectDetailActivity : AuroraActivity() {
         val dialog = MaterialAlertDialogBuilder(this)
             .setTitle(R.string.new_task)
             .setView(dialogBinding.root)
-            .setPositiveButton(R.string.cd_add, null)
+            .setPositiveButton(R.string.add, null)
             .setNegativeButton(R.string.cancel, null)
             .create()
 

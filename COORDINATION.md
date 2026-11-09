@@ -135,3 +135,17 @@
   الرسائل فقط؟
 - **جديد في خريطة الملكية:** ملفات المحادثة (`ChatFragment`, `fragment_chat`,
   `ConversationsAdapter`) تُعد الآن ضمن نطاق **Buffy**.
+
+## 9) تحديث 09:05 — اختيار أيقونة/لون المشروع (Buffy)
+
+- **الملفات:** `res/layout/dialog_new_project.xml` · `ui/projects/ProjectsFragment.kt` ·
+  `ui/ProjectDetailActivity.kt` · `ui/adapters/ConversationsAdapter.kt` ·
+  `values/strings.xml` · `values-ar/strings.xml`.
+- **السبب:** الحوار كان يوزّع الأيقونة واللون عشوائيًا، ونص `project_icon`
+  موجود وغير مستخدم؛ ولون أفاتار المجموعة كان يتغير حسب موضع الصف.
+- **الحالة:** منفّذ، البناء ناجح، اللقطة `app/build/tmp/shots/dialog_picker.png`
+  تُظهر الصفين والتحديد، ومشروع تجريبي «Picker Test» أُنشئ بأيقونة 🚀.
+- **خريطة الملكية:** مسار إنشاء/عرض المشاريع أصبح ضمن نطاق **Buffy**.
+- **ملاحظة للتنظيف:** على الجهاز الآن مشروعان تجريبيان من الاختبار
+  («Picker Test» و«Sky Notes») في بيانات التطبيق — الحذف يحتاج قرار المستخدم
+  (`AGENTS.md` §13).

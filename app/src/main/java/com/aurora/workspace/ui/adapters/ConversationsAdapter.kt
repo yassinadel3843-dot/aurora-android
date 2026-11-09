@@ -38,7 +38,7 @@ class ConversationsAdapter(
 
         val member = Store.member(conversation.memberId)
         if (conversation.isGroup) {
-            b.avatar.bind(initialsFor(conversation.title), conversationColor(position), false)
+            b.avatar.bind(initialsFor(conversation.title), conversationColor(conversation.id), false)
         } else {
             b.avatar.bind(member?.name ?: conversation.title, member?.color ?: 0xFF4DA3FF.toInt(), member?.online == true)
         }
@@ -62,13 +62,17 @@ class ConversationsAdapter(
     private fun initialsFor(title: String): String =
         title.trim().take(2).uppercase()
 
-    private fun conversationColor(position: Int): Int {
+    /**
+     * Colour is derived from the conversation id, not from the row position:
+     * a filter (chat search) or a new message must not repaint a group's avatar.
+     */
+    private fun conversationColor(id: String): Int {
         val palette = intArrayOf(
             0xFF4DA3FF.toInt(),
             0xFF7C5CFF.toInt(),
             0xFF35E0C8.toInt(),
             0xFFFF8A5B.toInt()
         )
-        return palette[position % palette.size]
+        return palette[Math.floorMod(id.hashCode(), palette.size)]
     }
 }
