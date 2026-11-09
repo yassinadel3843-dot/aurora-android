@@ -3,7 +3,12 @@
 All notable changes to Aurora. Versions follow `versionName` in
 `app/build.gradle.kts`; release tags are `v<versionName>`.
 
-## [Unreleased]
+## [1.0.0] — 2026-11-09
+
+First complete build: auth screen, four tabs (Home / Projects / Chat / Profile),
+five themes, Arabic + English with RTL, tasks with priorities and tags, project
+detail, conversations, local JSON persistence, notifications channel, tablet
+layout from 600dp.
 
 ### Added
 
@@ -32,9 +37,7 @@ All notable changes to Aurora. Versions follow `versionName` in
 - Misc: tab transition animation, unified 1.8 stroke icon set, GlassCard shadow,
   monochrome launcher icon layer.
 
-## [1.0.0]
+### Compatibility
 
-First complete build: auth screen, four tabs (Home / Projects / Chat / Profile),
-five themes, Arabic + English with RTL, tasks with priorities and tags, project
-detail, conversations, local JSON persistence, notifications channel, tablet
-layout from 600dp.
+- `minSdk 21` (Android 5.0) through `targetSdk 36`.
+- Fully offline; the only network call is the optional update check.
