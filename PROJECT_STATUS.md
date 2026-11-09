@@ -7,8 +7,12 @@
 ## 1. الحالة الإجمالية
 
 - **الكود:** مشروع Android Studio كامل بنسخة ممتازة وصقيلة (versionName 1.0.0).
-- **Git:** مستودع محلي داخل `Aurora/` (بدون remote). commit الأساس `5a150b9`.
+- **Git:** مستودع داخل `Aurora/` منشور على GitHub (**عام**):
+  `https://github.com/yassinadel3843-dot/aurora-android` — الفرع `main`.
   `.gitignore` يستثني `build/` و`.gradle/` و`.idea/` و`.kotlin/` و`local.properties`.
+- **الإصدار:** `v1.0.0` منشور على GitHub Releases مع APK موقّع (5.2 ميجا):
+  `…/releases/download/v1.0.0/aurora-1.0.0.apk`
+  (موقّع حاليًا بشهادة **debug** — لازم keystore خاص للنشر طويل الأمد).
 - **البناء:** ✅ أحدث بناء ناجح `gradle :app:assembleDebug :app:assembleRelease` بـ 0 أخطاء.
 - **APK:** ✅ مبني ويعمل بنسختي Debug و Release الموقّعة.
 - **الاختبارات الآلية:** ✅ توجد اختبارات وحدة مجتازة بنجاح `gradle :app:testDebugUnitTest` (2 passed, 0 failed).
