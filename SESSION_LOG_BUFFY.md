@@ -153,3 +153,22 @@ sleep 6   # لا تلتقط قبل ذلك: قد تظهر طبقة splash بيض�
 "$ADB" shell screencap -p /sdcard/s.png && "$ADB" pull /sdcard/s.png <path>
 "$ADB" logcat -d | grep -c "FATAL EXCEPTION"
 ```
+
+## 8) Git — تسجيل الشغل (2026-11-09)
+
+- الوكيل الآخر أنشأ المستودع: فرع `main`، وCommit أساسي
+  `5a150b9 Baseline: Aurora v1.0.0 with full identity polish` (08:32).
+  الرسالة تذكر صراحةً M5 وM6، أي أن شغلي داخل الـ Baseline.
+- **تحقّق مباشر من الـ Commit** (مش من الرسالة):
+  - `app/src/main/res/anim/fragment_enter.xml` ✅ موجود
+  - `app/src/main/res/anim/fragment_exit.xml` ✅ موجود
+  - `app/src/main/java/com/aurora/workspace/ui/MainActivity.kt` سطر 96 =
+    `setCustomAnimations(R.anim.fragment_enter, R.anim.fragment_exit)` ✅
+  - `SESSION_LOG_BUFFY.md` ✅ موجود
+  - M6: كل `ic_*.xml` مسجّل بسماكة 1.8 (والـ 11 أيقونة داخل الـ commit).
+- **الملف الوحيد اللي كان غير مسجّل:** `COORDINATION.md` (أنشأته بعد الـ
+  Baseline) → سُجّل في Commit مستقل مع تحديثي هذا الملف.
+- **سلامة `.gitignore`:** `app/build/outputs/apk/debug/app-debug.apk` و
+  `local.properties` مستبعدان فعليًا (تم التحقق بـ `git check-ignore -v`).
+- **قاعدة العمل معه:** أي commit جديد لازم يكون محدّد النطاق، ومفيش `amend`
+  على commit حد تاني، ومفيش push بدون طلب المستخدم.

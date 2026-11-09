@@ -13,3 +13,6 @@
 local.properties
 app/build/
 build/
+
+# Freebuff desktop markers (machine-local, never commit)
+.freebuff/
