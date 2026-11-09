@@ -3,6 +3,18 @@
 All notable changes to Aurora. Versions follow `versionName` in
 `app/build.gradle.kts`; release tags are `v<versionName>`.
 
+## [Unreleased]
+
+من v1.0.0 مفيش أي تغيير وظيفي — كل اللي اتعمل بعدها توثيق فقط. أي إضافة جديدة
+تُسجَّل هنا قبل رفع الإصدار القادم.
+
+**الرقم القادم: 1.0.1** لإصلاحات، أو **1.1.0** لو فيه ميزات جديدة.
+
+No functional changes since v1.0.0 — only documentation. Anything new gets
+recorded here before the next release is cut.
+
+**Next version: 1.0.1** for fixes, or **1.1.0** if new features land.
+
 ## [1.0.0] — 2026-11-09
 
 First complete build: auth screen, four tabs (Home / Projects / Chat / Profile),
