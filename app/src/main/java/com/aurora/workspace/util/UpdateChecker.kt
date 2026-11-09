@@ -27,7 +27,7 @@ object UpdateChecker {
      * Owner/name of the public repository that hosts the releases. When the
      * project is forked or renamed this is the only line that has to change.
      */
-    const val REPO = "yassinadel3843-dot/Aurora"
+    const val REPO = "yassinadel3843-dot/aurora-android"
 
     private const val API = "https://api.github.com/repos/$REPO/releases/latest"
     private const val RELEASES_PAGE = "https://github.com/$REPO/releases"

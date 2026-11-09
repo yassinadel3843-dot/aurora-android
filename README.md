@@ -6,8 +6,8 @@ Offline-first, bilingual (English / العربية), five hand-tuned themes.
 **مساحة عمل أندرويد أصلية للمشاريع والمهام ومحادثات الفريق.** تعمل بلا إنترنت،
 بلغتين (العربية / English)، وبخمسة ثيمات مصمّمة يدويًا.
 
-[![Download](https://img.shields.io/badge/download-latest%20APK-2f6bff)](https://github.com/yassinadel3843-dot/Aurora/releases/latest)
-[![minSdk](https://img.shields.io/badge/Android-5.0%2B-3ddc84)](https://github.com/yassinadel3843-dot/Aurora/releases/latest)
+[![Download](https://img.shields.io/badge/download-latest%20APK-2f6bff)](https://github.com/yassinadel3843-dot/aurora-android/releases/latest)
+[![minSdk](https://img.shields.io/badge/Android-5.0%2B-3ddc84)](https://github.com/yassinadel3843-dot/aurora-android/releases/latest)
 
 | Home | Projects | Project detail | Profile |
 |---|---|---|---|
@@ -19,7 +19,7 @@ Offline-first, bilingual (English / العربية), five hand-tuned themes.
 
 ### Download
 
-1. Open the [latest release](https://github.com/yassinadel3843-dot/Aurora/releases/latest).
+1. Open the [latest release](https://github.com/yassinadel3843-dot/aurora-android/releases/latest).
 2. Download `aurora-<version>.apk`.
 3. Open the file and allow installation from this source when Android asks.
 
@@ -133,7 +133,7 @@ issue if you want a different arrangement.
 
 ### التنزيل
 
-1. افتح [أحدث إصدار](https://github.com/yassinadel3843-dot/Aurora/releases/latest).
+1. افتح [أحدث إصدار](https://github.com/yassinadel3843-dot/aurora-android/releases/latest).
 2. نزّل الملف `aurora-<الإصدار>.apk`.
 3. افتح الملف واسمح بالتثبيت من هذا المصدر عندما يسألك أندرويد.
 

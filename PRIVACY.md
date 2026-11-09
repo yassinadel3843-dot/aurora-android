@@ -14,7 +14,7 @@ The only network request the app makes:
 
 - Once a day (and only if that request has not already succeeded that day) it
   asks the public GitHub API for the latest release of this repository:
-  `https://api.github.com/repos/yassinadel3843-dot/Aurora/releases/latest`.
+  `https://api.github.com/repos/yassinadel3843-dot/aurora-android/releases/latest`.
 - That request sends no identifier, no account, no device model, no location and
   no content from your workspace. GitHub receives an IP address and the
   user-agent string `Aurora-Android`, as with any HTTPS request.
@@ -51,7 +51,7 @@ is no server-side copy to delete.
 
 - مرة واحدة يوميًا (وفقط إذا لم ينجح الطلب في ذلك اليوم) يسأل GitHub API العام عن
   أحدث إصدار من هذا المستودع:
-  `https://api.github.com/repos/yassinadel3843-dot/Aurora/releases/latest`.
+  `https://api.github.com/repos/yassinadel3843-dot/aurora-android/releases/latest`.
 - الطلب لا يرسل أي معرّف ولا حساب ولا طراز جهاز ولا موقع ولا أي محتوى من مساحة
   عملك. GitHub يستقبل عنوان IP وسلسلة `Aurora-Android`، كما في أي طلب HTTPS.
 - عند وجود إصدار أحدث قد ينزّل التطبيق ملف APK من GitHub Releases عند ضغطك على
