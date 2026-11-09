@@ -19,6 +19,9 @@ Offline-first, bilingual (English / العربية), five hand-tuned themes.
 
 ### Download
 
+**Download page:** <https://yassinadel3843-dot.github.io/aurora-android/> ·
+صفحة التنزيل بالعربية: <https://yassinadel3843-dot.github.io/aurora-android/>
+
 1. Open the [latest release](https://github.com/yassinadel3843-dot/aurora-android/releases/latest).
 2. Download `aurora-<version>.apk`.
 3. Open the file and allow installation from this source when Android asks.
