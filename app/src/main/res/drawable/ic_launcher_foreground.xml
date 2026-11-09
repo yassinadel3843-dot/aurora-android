@@ -10,15 +10,15 @@
         android:strokeWidth="7"
         android:strokeLineCap="round"
         android:strokeLineJoin="round"
-        android:pathData="M31,80 L54,27 L77,80" />
+        android:pathData="M37,77 L54,31 L71,77" />
     <path
         android:fillColor="#00000000"
         android:strokeColor="#FFFFFF"
         android:strokeWidth="7"
         android:strokeLineCap="round"
-        android:pathData="M42,63 L66,63" />
+        android:pathData="M46,61 L62,61" />
     <!-- Four-point sparkle -->
     <path
         android:fillColor="#4DE8D8"
-        android:pathData="M84,11 C85.5,17.5 88.5,20.5 95,22 C88.5,23.5 85.5,26.5 84,33 C82.5,26.5 79.5,23.5 73,22 C79.5,20.5 82.5,17.5 84,11 Z" />
+        android:pathData="M71,27 C71.7,29.4 73.6,31.3 76,32 C73.6,32.7 71.7,34.6 71,37 C70.3,34.6 68.4,32.7 66,32 C68.4,31.3 70.3,29.4 71,27 Z" />
 </vector>
